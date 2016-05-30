@@ -6,7 +6,7 @@
 /*   By: rfriscca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/21 13:11:26 by rfriscca          #+#    #+#             */
-/*   Updated: 2016/04/14 17:27:26 by rfriscca         ###   ########.fr       */
+/*   Updated: 2016/05/30 13:35:06 by rfriscca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,9 @@ int		main(int argc, char **argv)
 	stock.mult = 25;
 	if (argc != 2)
 		ft_error_handler(1);
-	if (argc > 1)
-		if ((fd = open(argv[1], O_RDONLY)) <= 0)
+	if ((fd = open(argv[1], O_RDONLY)) <= 0)
 			ft_error_handler(2);
-	if (argc > 1)
-		if ((stock.list = stock_file(fd)) == NULL)
+	if ((stock.list = stock_file(fd)) == NULL)
 			ft_error_handler(3);
 	if (test_file(stock.list) == 0)
 		ft_error_handler(4);

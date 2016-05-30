@@ -6,7 +6,7 @@
 /*   By: rfriscca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 15:27:00 by rfriscca          #+#    #+#             */
-/*   Updated: 2016/05/20 15:48:03 by rfriscca         ###   ########.fr       */
+/*   Updated: 2016/05/30 13:28:48 by rfriscca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		test_file(t_line *list)
 	{
 		while (list->line[i])
 		{
-			if (list->line[i] != ' ' &&
+			if (list->line[i] != ' ' && list->line[i] != '-' &&
 				ft_isdigit(list->line[i]) == 0)
 				return (0);
 			++i;
