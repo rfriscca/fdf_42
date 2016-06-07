@@ -6,7 +6,7 @@
 /*   By: rfriscca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 16:47:21 by rfriscca          #+#    #+#             */
-/*   Updated: 2016/04/14 17:17:11 by rfriscca         ###   ########.fr       */
+/*   Updated: 2016/06/07 11:13:09 by rfriscca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ typedef struct		s_stock
 	int				mult;
 }					t_stock;
 
+int					expose_hook(t_stock *param);
 int					test_file(t_line *list);
 int					dep(int x, int y, t_stock *param);
 t_seg				init_coo(int xi, int xf, int yi, int yf);

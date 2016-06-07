@@ -6,7 +6,7 @@
 /*   By: rfriscca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/21 13:11:26 by rfriscca          #+#    #+#             */
-/*   Updated: 2016/05/30 13:49:55 by rfriscca         ###   ########.fr       */
+/*   Updated: 2016/06/07 11:11:43 by rfriscca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_move(int n, t_stock *param)
 	draw(*param, param->mult);
 }
 
-int		ft_exit(int n, t_stock *param)
+int		key_hook(int n, t_stock *param)
 {
 	reset_window(*param);
 	if (n == 53)
@@ -89,7 +89,8 @@ int		main(int argc, char **argv)
 		ft_error_handler(4);
 	stock.mlx = mlx_init();
 	stock.win = mlx_new_window(stock.mlx, 1920, 1080, "FDF");
-	mlx_key_hook(stock.win, ft_exit, &stock);
+	mlx_key_hook(stock.win, key_hook, &stock);
+	mlx_expose_hook(stock.win, expose_hook, &stock);
 	if (argc > 1 && test_file(stock.list))
 		draw(stock, 25);
 	mlx_loop(stock.mlx);

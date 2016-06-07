@@ -6,7 +6,7 @@
 /*   By: rfriscca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/24 14:45:52 by rfriscca          #+#    #+#             */
-/*   Updated: 2016/04/01 12:41:49 by rfriscca         ###   ########.fr       */
+/*   Updated: 2016/06/07 11:14:22 by rfriscca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ int		switch_color(int n)
 		return (0x5c420f);
 	if (n < 0)
 		return (0x2a37f0);
+	return (0);
+}
+
+int		expose_hook(t_stock *param)
+{
+	draw(*param, param->mult);
 	return (0);
 }
 
